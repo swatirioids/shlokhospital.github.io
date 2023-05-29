@@ -22,6 +22,8 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -45,17 +47,73 @@
                     <div class="inner-container">
                         <div class="top-left">
                             <ul class="contact-list clearfix">
-                                <li class=""><i class="fa-solid fa-phone text-[#f48120]">08048051713</i></li>
-                                <li><i class="fa-solid fa-envelope"></i></i>Email:shlokhospital.ks@gmail.com</li>
+                                <li class=""><i class="fa-solid fa-phone text-[#f48120]">
+                                    <a class="phone-link" href="#" id="phoneLink">08048051713</a></i></li>
+                                <li class="hover:text-black"><i class="fa-solid fa-envelope " id="emailButton"></i>
+                                    <a class="email-link" href="#" id="emailLink" >Email:shlokhospital.ks@gmail.com</a></li>
                             </ul>
+                            
+                        
                         </div>
+
+                        <script>
+                             // phone-icon
+                             // Add an event listener to the phone link
+                            var phoneLink = document.getElementById("phoneLink");
+
+                            phoneLink.addEventListener("click", function(event) {
+                                    event.preventDefault(); // Prevents the default link behavior
+                                    var phoneNumber = "08048051713"; // Replace with your phone number
+                                    var telLink = "tel:" + phoneNumber;
+                                    window.location.href = telLink;
+});
+
+                            //Email-icon
+                    var emailLink = document.getElementById("emailLink");
+                            emailLink.addEventListener("click", function(event) {
+                          event.preventDefault(); // Prevents the default link behavior
+
+                        var emailAddress = "shlokhospital.ks@gmail.com"; // Replace with your email address
+                        var subject = "Email subject"; // Replace with the desired subject line
+                        var body = "Email body"; // Replace with the desired email body
+                        var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" +                      encodeURIComponent(body);
+                        window.location.href = mailtoLink;                      });
+
+
+
+                        </script>
                         <div class="top-right">
                             <ul class="social-icon-one">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                                <li><a href="#"><span class="fab fa-facebook-f" id="facebook-icon"></span></a></li>
+                                <li><a href="#"><span class="fab fa-twitter" id="twitter-icon"></span></a></li>
+                                <li><a href="#"><span class="fa-brands fa-square-whatsapp" id="whatsapp-icon"></span></a></li>
+                                <li><a href="#"><span class="fa-brands fa-square-instagram" id="instagram-icon"></span></a></li>
                             </ul>
+                            <script>
+                                // facebook icons
+                            const facebookIcon = document.getElementById('facebook-icon');
+                            facebookIcon.addEventListener('click', () => {
+                            window.location.href = 'https://www.facebook.com/people/Shlok-hospital/100064047314336/';
+                            });
+
+                            // twitter-icon
+                            const twitterIcon = document.getElementById('twitter-icon');
+                            twitterIcon.addEventListener('click', () => {
+                            window.location.href = 'https://twitter.com/shlok_Hospital';
+                            });
+                            
+                            // whatsapp-icon
+                            const whatsappIcon = document.getElementById('whatsapp-icon');
+                            whatsappIcon.addEventListener('click', () => {
+                            window.location.href = 'https://api.whatsapp.com/send?text=https://www.shlokhospital.in';
+                            });
+
+                            //instagram-icon
+                            const instagramIcon  = document.getElementById('instagram-icon');
+                            instagramIcon.addEventListener('click', () => {
+                            window.location.href = 'https://www.instagram.com/shlokhospital/';
+                            });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -85,7 +143,7 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <span>Specialities</span>
+                                        <span>Services</span>
                                         <ul>
                                             <li><a href="burncare.html">Burn Care</a></li>
                                             <li><a href="physiotheraphy.html">Physiotherapy</a></li>
@@ -114,7 +172,6 @@
                             <!-- Main Menu End-->
 
                             <div class="outer-box">
-                                <button class="search-btn"><span class="fa fa-search"></span></button>
                                     <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a>
                             </div>
                         </div>
@@ -188,7 +245,7 @@
                                 <h2>We take care our <br>patients health</h2>
                                 <div class="text">Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</div>
                                 <div class="btn-box">
-                                    <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">View Services</span></a>
+                                    <a href="more.html" class="theme-btn btn-style-one"><span class="btn-title">View Services</span></a>
                                     <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Appointment</span></a>
                                 </div>
                             </div>
@@ -203,9 +260,9 @@
                             <div class="content-box">
                                 <span class="title">SHLOK HOSPITAL - 08048051713</span>
                                 <h2>We take care our <br>patients health</h2>
-                                <div class="text">I realized that becoming a doctor, I can only help a small community. <br>But by becoming a doctor, I can help my whole country. </div>
+                                <div class="text">Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</div>
                                 <div class="btn-box">
-                                    <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">View Services</span></a>
+                                    <a href="more.html" class="theme-btn btn-style-one"><span class="btn-title">View Services</span></a>
                                     <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Appointment</span></a>
                                 </div>
                             </div>
@@ -749,7 +806,7 @@
     <!-- Color Palate / Color Switcher -->
     <div class="color-palate">
         <div class="inner-palate">
-            <div class="color-trigger"><i class="fa fa-cog"></i></div>
+            <!-- <div class="color-trigger"><i class="fa fa-cog"></i></div> -->
             <div class="color-palate-head">
                 <h5>GET AN AWESOME START!</h5>
             </div>
