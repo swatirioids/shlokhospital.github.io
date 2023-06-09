@@ -45,19 +45,74 @@
                     <div class="inner-container">
                         <div class="top-left">
                             <ul class="contact-list clearfix">
-                                <li class=""><i class="fa-solid fa-phone text-[#f48120]">08048051713</i></li>
-                                <li><i class="fa-solid fa-envelope"></i>Email:shlokhospital.ks@gmail.com</li>
+                                <li class=""><i class="fa-solid fa-phone text-[#f48120]">
+                                    <a href="#" id="phone-link">08048051713</a></i></li>
+                                <li class="hover:text-black"><i class="fa-solid fa-envelope " id="emailButton"></i>
+                                    <a class="email-link" href="#" id="emailLink">Email:shlokhospital.ks@gmail.com</a></li>
                             </ul>
-                        </div>
-                        <div class="top-right">
-                            <ul class="social-icon-one">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+                            <script>
+                                // phone-icon
+                                // Add an event listener to the phone link
+                            const phoneLink = document.getElementById('phone-link');
+                            phoneLink.addEventListener('click', function(event) {
+                               event.preventDefault(); // Prevent the default link behavior
+                               const phoneNumber = '+8048051713'; // Replace with the actual phone number
+                            window.open('tel:' + phoneNumber);
+                        });
+
+
+                            //Email-icon
+                            var emailLink = document.getElementById("emailLink");
+                            emailLink.addEventListener("click", function(event) {
+                               event.preventDefault(); // Prevents the default link behavior
+
+                               var emailAddress = "shlokhospital.ks@gmail.com"; // Replace with your email address
+                               var subject = "Email subject"; // Replace with the desired subject line
+                               var body = "Email body"; // Replace with the desired email body
+                            var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" +encodeURIComponent(body);
+                            window.location.href = mailtoLink;                      
+                    });
+                </script>
+                </div>
+
+                <!------icon------>
+                <!---icon--->
+                <div class="top-right">
+                    <ul class="social-icon-one">
+                        <li><a href="#"><span class="fab fa-facebook-f" id="facebook-icon"></span></a></li>
+                        <li><a href="#"><span class="fab fa-twitter" id="twitter-icon"></span></a></li>
+                        <li><a href="#"><span class="fa-brands fa-square-whatsapp" id="whatsapp-icon"></span></a></li>
+                        <li><a href="#"><span class="fa-brands fa-square-instagram" id="instagram-icon"></span></a></li>
+                    </ul>
+                    <script>
+                        // facebook icons
+                    const facebookIcon = document.getElementById('facebook-icon');
+                    facebookIcon.addEventListener('click', () => {
+                    window.location.href = 'https://www.facebook.com/people/Shlok-hospital/100064047314336/';
+                    });
+
+                    // twitter-icon
+                    const twitterIcon = document.getElementById('twitter-icon');
+                    twitterIcon.addEventListener('click', () => {
+                    window.location.href = 'https://twitter.com/shlok_Hospital';
+                    });
+                    
+                    // whatsapp-icon
+                    const whatsappIcon = document.getElementById('whatsapp-icon');
+                    whatsappIcon.addEventListener('click', () => {
+                    window.location.href = 'https://api.whatsapp.com/send?text=https://www.shlokhospital.in';
+                    });
+
+                    //instagram-icon
+                    const instagramIcon  = document.getElementById('instagram-icon');
+                    instagramIcon.addEventListener('click', () => {
+                    window.location.href = 'https://www.instagram.com/shlokhospital/';
+                    });
+                    </script>
+                </div>
+
+                </div>
                 </div>
             </div>
             <!-- End Header Top -->
@@ -85,7 +140,7 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <span>Specialities</span>
+                                        <span>Services</span>
                                         <ul>
                                             <li><a href="burncare.html">Burn Care</a></li>
                                             <li><a href="physiotheraphy.html">Physiotherapy</a></li>
@@ -114,8 +169,7 @@
                             <!-- Main Menu End-->
 
                             <div class="outer-box">
-                                <button class="search-btn"><span class="fa fa-search"></span></button>
-                                    <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a>
+                                <button id="open-popup-btns"><a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a></button> 
                             </div>
                         </div>
                     </div>
@@ -147,7 +201,7 @@
                     <div class="outer-box">
                         <!-- Search Btn -->
                         <div class="search-box">
-                            <button class="search-btn mobile-search-btn"><i class="flaticon-magnifying-glass"></i></button>
+                            <!-- <button class="search-btn mobile-search-btn"><i class="flaticon-magnifying-glass"></i></button> -->
                         </div>
                         <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="fa fa-bars"></span></a>
                     </div>
@@ -180,9 +234,9 @@
         <!--End Main Header -->
 
         <!--Page Title-->
-        <section class="page-title" style="background-image: url(images/h.webp);">
+        <section class="page-title" style="background-image: url(images/wallpaperofservices.jpg); height:34rem;">
             <div class="auto-container">
-                <div class="title-outer">
+                <div class="btn-title">
                     <h1>About Us</h1>
                     <ul class="page-breadcrumb">
                         <li><a href="index.html">Home</a></li>
@@ -248,35 +302,31 @@
                         </div>
                     </div>
 
+                
+                <!-------- Appointment-------->
                     <div class="form-column col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-column">
-                            <div class="appointment-form default-form">
+                            <div class="appointment-form">
                                 <!--Comment Form-->
-                                <form action="#" method="post" id="email-form">
-                                    <div class="form-group">
-                                        <div class="response"></div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="username" placeholder="Your Name">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="email" name="email" placeholder="Your Email *">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="phone" placeholder="Your Phone">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <textarea name="contact_message" placeholder="Tell us about Pasent"></textarea>
-                                    </div>
-
-                                    <div class="text-left">
-                                        <button class="theme-btn btn-style-one" type="button" name="submit-form"><span class="btn-title">Submit Query</span></button>
-                                    </div>
-                                </form>
+                                <br><br>
+                                <h1 class="md:text-3xl text-2xl font-bold text-gray-600 relative -top-10 text-center">Book an Appointment</h1>
+                                <h1 class="text-base text-gray-400 -mt-5 text-center">Please Enter Your Contact Details</h1>
+                                <form action="" id="myForm">
+                                    <div class="flex flex-col gap-8 md:px-12 px-4 pt-3">
+                                        
+                                            <input type="text" placeholder="Name" autocomplete="off" id="name" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg bg-gray-100 drop-shadow-xl h-10 px-4">
+                
+                                            <input type="email" id="email" name="email" placeholder="Email" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg bg-gray-100 drop-shadow-xl h-10 px-4">
+                
+                                            <input type="number" id="contact" name="contact" placeholder="Contact Number" autocomplete="off" class="border-b-2 border-0 border-gray-200 rounded-lg bg-gray-100 drop-shadow-xl h-10 px-4">
+                
+                                        <button class="mt-4 border rounded-lg py-2 bg-orange-600 font-bold hover:bg-orange-700 drop-shadow-xl text-white" 
+                                        type="submit" value="Submit">Submit</button>
+                                        </div>
+                                        <br>
+                                        
+                                    
+                                        </form>
                             </div>
                         </div>
                     </div>
@@ -433,7 +483,7 @@
                             </div>
                         </div>
 
-                        <div class="btn-box"><a href="#" class="theme-btn btn-style-three"><span class="btn-title">Learn More</span></a></div>
+                        
                     </div>
                 </div>
 
@@ -468,31 +518,31 @@
                                         <p>Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff.</p>
                                     </div>
                                     <ul class="social-icon-three">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
+                                        <ul class="social-icon-three">
+                                            <li><a href="https://www.facebook.com/people/Shlok-hospital/100064047314336/"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/shlok_Hospital"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://www.instagram.com/shlokhospital/"><i class="fab fa-square-instagram"></i></a></li>
+                                            <li><a href="https://api.whatsapp.com/send?text=https://www.shlokhospital.in"><span class="fa-brands fa-square-whatsapp" id="whatsapp-icon"></span></a></li>
                                 </div>
                             </div>
 
                             <!--Footer Column-->
                             <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget">
-                                    <h2 class="widget-title">Departments</h2>
+                                    <h2 class="widget-title">Services</h2>
                                     <ul class="user-links">
-                                        <li><a href="#">Burn Care</a></li>
-                                        <li><a href="#">Physiotherapy</a></li>
-                                        <li><a href="#">Anaesthesiology</a></li>
-                                        <li><a href="#">Psychiatry</a></li>
-                                        <li><a href="#">Rheumatology</a></li>
-                                        <li><a href="#">More</a></li>
+                                        <li><a href="burncare.html">Burn Care</a></li>
+                                        <li><a href="physiotheraphy.html">Physiotherapy</a></li>
+                                        <li><a href="anaesthesiology.html">Anaesthesiology</a></li>
+                                        <li><a href="psychiatry.html">Psychiatry</a></li>
+                                        <li><a href="rheumatology.html">Rheumatology</a></li>
+                                        <li><a href="more.html">More</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                     <!--Big Column-->
                     <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
@@ -530,25 +580,28 @@
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <!--Footer Column-->
                                 <div class="footer-widget contact-widget">
+                                    <div class="md:ml-8">
                                     <h2 class="widget-title">Contact Us</h2>
+                                    </div>
                                     <!--Footer Column-->
                                     <div class="widget-content">
                                         <ul class="contact-list">
-                                            <li>
-                                                <span class="icon flaticon-placeholder"></span>
-                                                <div class="text">Right Side Of Bridge, Khed Shivapur,Khed Shivapur, Kondhanpur Phata, Opposite Muktangan Hotel
-                                            </li>
-
-                                            <li>
+                                        
+                                        
+                                            <div class="flex">
+                                            <li class="md:ml-9 -ml-11 -mt-3">
                                                 <span class="icon flaticon-call-1"></span>
+                                                <div class="-ml-6">
                                                 <div class="text">Mon to sun : 7PM - 7PM</div>
-                                                <a href="tel:+89868679575"><strong>+91-08048051713</strong></a>
+                                                <a href="tel:+08048051713"><strong>+91-08048051713</strong></a>
+                                                </div>
                                             </li>
 
-                                            <li>
-                                                <span class="icon flaticon-email"></span>
-                                                <div class="text">Do you have a Question?<br>
-                                                    <a href="mailto:info@gmail.com"><strong>shlokhospital.ks@gmail.com</strong></a></div>
+                                            </div>
+
+                                            <li class="md:-ml-10 -ml-16 md:mt-12 mt-3">
+                                                <iframe width="100%" height="20%" src="https://www.google.com/maps/embed/v1/place?q=412205,Right Side Of Bridge, Khed Shivapur, Khed Shivapur , Kondhanpur Phata, Opposite Muktangan Hotel,Pune,India&amp;zoom=15&amp;key=AIzaSyDz5vOp_4ebrlGOV0FyuSf_w5jHBIQz5iQ">
+                                            </iframe>
                                             </li>
 
                                         </ul>
@@ -560,28 +613,6 @@
                 </div>
             </div>
         </div>
-
-            <!--Footer Bottom-->
-            <div class="footer-bottom">
-                <!-- Scroll To Top -->
-                <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-                <div class="auto-container">
-                    <div class="inner-container clearfix">
-                        <div class="footer-nav">
-                            <ul class="clearfix">
-                                <li><a href="index.html">Privacy Policy</a></li>
-                                <li><a href="about-us.html">Contact</a></li>
-                                <li><a href="services.html">Supplier</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="copyright-text">
-                            <p>Copyright © 2020 <a href="#">Bold Touch</a>All Rights Reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </footer>
         <!--End Main Footer -->
 
@@ -592,7 +623,7 @@
     <!-- Color Palate / Color Switcher -->
     <div class="color-palate">
         <div class="inner-palate">
-            <div class="color-trigger"><i class="fa fa-cog"></i></div>
+            <!-- <div class="color-trigger"><i class="fa fa-cog"></i></div> -->
             <div class="color-palate-head">
                 <h5>GET AN AWESOME START!</h5>
             </div>

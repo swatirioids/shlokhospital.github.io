@@ -14,6 +14,7 @@
     <!--Color Themes-->
     <link id="theme-color-file" href="css/color-themes/default-theme.css" rel="stylesheet">
 
+    <!-- font icon -->
     <script src="https://kit.fontawesome.com/8de71d6583.js" crossorigin="anonymous"></script>
 
     <!--Color Switcher Mockup-->
@@ -31,6 +32,8 @@
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
+
+
 <body>
 
     <div class="page-wrapper">
@@ -47,41 +50,40 @@
                     <div class="inner-container">
                         <div class="top-left">
                             <ul class="contact-list clearfix">
-                                <li class=""><i class="fa-solid fa-phone text-[#f48120]">
-                                    <a class="phone-link" href="#" id="phoneLink">08048051713</a></i></li>
+                                <li class=""><i class="fa-solid fa-phone text-[#f48120] tracking-tight">
+                                    <a href="#" id="phone-link">08048051713</a></i></li>
                                 <li class="hover:text-black"><i class="fa-solid fa-envelope " id="emailButton"></i>
-                                    <a class="email-link" href="#" id="emailLink" >Email:shlokhospital.ks@gmail.com</a></li>
+                                    <a class="email-link" href="#" id="emailLink">Email:shlokhospital.ks@gmail.com</a></li>
                             </ul>
-                            
-                        
-                        </div>
+                            </div>
+
+                        <!---script-->
 
                         <script>
                              // phone-icon
                              // Add an event listener to the phone link
-                            var phoneLink = document.getElementById("phoneLink");
+                            const phoneLink = document.getElementById('phone-link');
+                            phoneLink.addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent the default link behavior
+                            const phoneNumber = '+8048051713'; // Replace with the actual phone number
+                            window.open('tel:' + phoneNumber);
+                        });
 
-                            phoneLink.addEventListener("click", function(event) {
-                                    event.preventDefault(); // Prevents the default link behavior
-                                    var phoneNumber = "08048051713"; // Replace with your phone number
-                                    var telLink = "tel:" + phoneNumber;
-                                    window.location.href = telLink;
-});
 
                             //Email-icon
-                    var emailLink = document.getElementById("emailLink");
+                            var emailLink = document.getElementById("emailLink");
                             emailLink.addEventListener("click", function(event) {
-                          event.preventDefault(); // Prevents the default link behavior
+                            event.preventDefault(); // Prevents the default link behavior
 
-                        var emailAddress = "shlokhospital.ks@gmail.com"; // Replace with your email address
-                        var subject = "Email subject"; // Replace with the desired subject line
-                        var body = "Email body"; // Replace with the desired email body
-                        var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" +                      encodeURIComponent(body);
-                        window.location.href = mailtoLink;                      });
+                            var emailAddress = "shlokhospital.ks@gmail.com"; // Replace with your email address
+                            var subject = "Email subject"; // Replace with the desired subject line
+                            var body = "Email body"; // Replace with the desired email body
+                            var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" +encodeURIComponent(body);
+                            window.location.href = mailtoLink;                      
+                    });
+                </script>
 
-
-
-                        </script>
+                <!---icon--->
                         <div class="top-right">
                             <ul class="social-icon-one">
                                 <li><a href="#"><span class="fab fa-facebook-f" id="facebook-icon"></span></a></li>
@@ -172,9 +174,8 @@
                             <!-- Main Menu End-->
 
                             <div class="outer-box">
-                                    <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a>
+                                <button id="open-popup-btns"><a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a></button> 
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -203,9 +204,6 @@
 
                     <div class="outer-box">
                         <!-- Search Btn -->
-                        <div class="search-box">
-                            <button class="search-btn mobile-search-btn"><i class="flaticon-magnifying-glass"></i></button>
-                        </div>
                         <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="fa fa-bars"></span></a>
                     </div>
                 </div>
@@ -234,44 +232,47 @@
         <!--End Main Header -->
 
         <!-- Bnner Section One -->
-        <section class="banner-section-one">
-            <div class="banner-carousel owl-carousel owl-theme default-arrows dark">
-                <!-- Slide Item -->
-                <div class="slide-item" style="background-image:url(images/background/7.jpg);">
-                    <div class="auto-container">
-                        <div class="content-outer">
-                            <div class="content-box">
-                                <span class="title">SHLOK HOSPITAL - 08048051713</span>
-                                <h2>We take care our <br>patients health</h2>
-                                <div class="text">Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</div>
-                                <div class="btn-box">
-                                    <a href="more.html" class="theme-btn btn-style-one"><span class="btn-title">View Services</span></a>
-                                    <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Appointment</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide Item -->
-                <div class="slide-item" style="background-image: url(images/dr1.avif);">
-                    <div class="auto-container">
-                        <div class="content-outer">
-                            <div class="content-box">
-                                <span class="title">SHLOK HOSPITAL - 08048051713</span>
-                                <h2>We take care our <br>patients health</h2>
-                                <div class="text">Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</div>
-                                <div class="btn-box">
-                                    <a href="more.html" class="theme-btn btn-style-one"><span class="btn-title">View Services</span></a>
-                                    <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Appointment</span></a>
-                                </div>
+    <section class="banner-section-one">
+        <div class="banner-carousel owl-carousel owl-theme default-arrows dark">
+            <!-- Slide Item -->
+            <div class="slide-item" style="background-image: url(images/background/7.jpg);">
+                <div class="auto-container">
+                    <div class="content-outer">
+                        <div class="content-box">
+                            <span class="title">SHLOK HOSPITAL - 08048051713</span>
+                            <h2>We take care our <br>patients health</h2>
+                            <div class="text">Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</div>
+                            <div class="btn-box">
+                                <a href="./about-us.html" class="theme-btn btn-style-one"><span class="btn-title">About Us</span></a>
+                                <a href="./more.html" class="theme-btn btn-style-two"><span class="btn-title">Services</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- End Bnner Section One -->
+
+            <!-- Slide Item -->
+            <div class="slide-item" style="background-image: url(images/dr1.avif);">
+                <div class="auto-container">
+                    <div class="content-outer">
+                        <div class="content-box">
+                            <span class="title">SHLOK HOSPITAL - 08048051713</span>
+                            <h2>We take care our <br>patients health</h2>
+                            <div class="text">Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</div>
+                            
+                            <div class="btn-box">
+                                <a href="./about-us.html" class="theme-btn btn-style-one"><span class="btn-title">About Us</span></a>
+                                <a href="./more.html" class="theme-btn btn-style-two"><span class="btn-title">Services</span></a>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Bnner Section One -->
+
 
         <!-- Top Features -->
         <section class="top-features">
@@ -324,7 +325,7 @@
                                 <p>Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff. Well equped ICU Unit and Experienced Doctors. Hospital is well cleaned andon the road of Pune Banglore Highway at Velu near Shivapur.</p>
                             </div>
                             <div class="link-box">
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">More About</span></a>
+                                <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">More About</span></a>
                             </div>
                         </div>
                     </div>
@@ -358,7 +359,8 @@
                         <div class="inner-box">
                             <span class="icon flaticon-heartbeat"></span>
                             <h5><a href="#">Health Check</a></h5>
-                            <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
+                            <div class="text">Regular health check-ups can identify any early signs of health issues. Finding problems early means that your chances for effective treatment are increased.
+                            Many factors, such as your age, health, family history and lifestyle choices, impact on how often you need check-ups.</div>
                         </div>
                     </div>
 
@@ -367,7 +369,7 @@
                         <div class="inner-box">
                             <span class="icon flaticon-surgery-room"></span>
                             <h5><a href="#">Operation Theater</a></h5>
-                            <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
+                            <div class="text">The Operation Theatre department at Shlok Hospitals takes pleasure in providing high-quality treatment in a clean and welcoming atmosphere, delivered by professionals with a wide spectrum of knowledge in each speciality. Further, we have well-equipped Operation Theatres capable of doing any type of surgery.</div>
                         </div>
                     </div>
 
@@ -497,7 +499,7 @@
 
         <!-- Appointment Section -->
         <section class="appointment-section">
-            <div class="image-layer" style="background-image: url(images/background/2.jpg);"></div>
+            <div class="image-layer" style="background-image: url(asset/resource/handsome.png;);"></div>
             <div class="auto-container">
                 <div class="row">
                     <!-- Content Column -->
@@ -506,11 +508,11 @@
                             <span class="title">Need a Doctor for Check-up?</span>
                             <h2>Just Make an Appointment <br>and You’re Done!</h2>
                             <div class="number">Get Your Quote or Call: <strong>+91-08048051713</strong></div>
-                            <a href="#" class="theme-btn btn-style-three"><span class="btn-title">Get an Appointment</span></a>
+                           <a href="./appointment.html" class="theme-btn btn-style-three"><span class="btn-title">Get an Appointment</span></a>
                         </div>
                     </div>
                     <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                        <figure class="image"><img src="images/resource/image-4.png" alt=""></figure>
+                        <figure class="image"><img src="asset/handsome.png" alt=""></figure>
                     </div>
                 </div>
 
@@ -557,6 +559,7 @@
         </section>
         <!-- End Appointment Section -->
 
+
         <!-- Testimonial Section -->
         <section class="testimonial-section">
             <div class="auto-container">
@@ -568,15 +571,91 @@
                 </div>
 
                 <div class="testimonial-outer">
+                    <!-- Client Testimonial Carousel -->
+                    <div class="client-testimonial-carousel owl-carousel owl-theme">
 
                         <!--Testimonial Block -->
                         <div class="testimonial-block">
                             <div class="inner-box">
-                                <div class="text">My mother was admitted in shlok hospital in October 2020, under emergency situation due to post-COVID effects. Very happy with the decision and really really grateful towards all the excellent team of doctors, nurses, substaff. Special thabks to Dr.Harne sir, Dr.Kaustubh khare sir, Dr Amey karnik sir, Dr Date sir, for all the tremendous efforts, treatment, equal and personal attention towards every patient. Hospital is well equipped, staff is well trained, and hygiene maintained. 24 hours availa.
-                                    Thanks!!
+                                <div class="text">My mother was admitted in shlok hospital in October 2020, under emergency situation due to post-COVID effects. Very happy with the decision and really really grateful towards all the excellent team of doctors, nurses, substaff. Special thabks to Dr.Harne sir, Dr.Kaustubh khare sir, Dr Amey karnik sir, Dr Date sir, for all the tremendous efforts, treatment, equal and personal attention towards every patient. Hospital is well equipped, staff is well trained, and hygiene maintained. 24 hours availa.</div>
+                            </div>
+                        </div>
+
+                        <!--Testimonial Block -->
+                        <div class="testimonial-block">
+                            <div class="inner-box">
+                                <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues.
+                                    Thanks!</div>
+                            </div>
+                        </div>
+
+                        <!--Testimonial Block -->
+                        <div class="testimonial-block">
+                            <div class="inner-box">
+                                <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues.
+                                    Thanks!</div>
+                            </div>
+                        </div>
+
+                        <!--Testimonial Block -->
+                        <div class="testimonial-block">
+                            <div class="inner-box">
+                                <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues.
+                                    Thanks!</div>
+                            </div>
+                        </div>
+
+                        <!--Testimonial Block -->
+                        <div class="testimonial-block">
+                            <div class="inner-box">
+                                <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues.
+                                    Thanks!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Thumbs Carousel -->
+                    <div class="client-thumb-outer">
+                        <div class="client-thumbs-carousel owl-carousel owl-theme">
+                            <div class="thumb-item">
+                                <figure class="thumb-box"><img src="images/resource/testi-thumb-1.jpg" alt=""></figure>
+                                <div class="author-info">
+                                    <span class="icon fa fa-quote-left"></span>
+                                    <div class="author-name">Vaibhavi Panchpor</div>
                                 </div>
                             </div>
-                        <div class="text-center font-extrabold mt-4 text-orange-600 text-xl md:text-center md:mt-5 md:font-extrabold">Vaibhavi Panchpor</div>
+                            <div class="thumb-item">
+                                <figure class="thumb-box"><img src="images/resource/testi-thumb-2.jpg" alt=""></figure>
+                                <div class="author-info">
+                                    <span class="icon fa fa-quote-left"></span>
+                                    <div class="author-name">Lara Croft</div>
+                                    <div class="designation">Restaurant Owner</div>
+                                </div>
+                            </div>
+                            <div class="thumb-item">
+                                <figure class="thumb-box"><img src="images/resource/testi-thumb-3.jpg" alt=""></figure>
+                                <div class="author-info">
+                                    <span class="icon fa fa-quote-left"></span>
+                                    <div class="author-name">Lara Croft</div>
+                                    <div class="designation">Restaurant Owner</div>
+                                </div>
+                            </div>
+                            <div class="thumb-item">
+                                <figure class="thumb-box"><img src="images/resource/testi-thumb-2.jpg" alt=""></figure>
+                                <div class="author-info">
+                                    <span class="icon fa fa-quote-left"></span>
+                                    <div class="author-name">Lara Croft</div>
+                                    <div class="designation">Restaurant Owner</div>
+                                </div>
+                            </div>
+                            <div class="thumb-item">
+                                <figure class="thumb-box"><img src="images/resource/testi-thumb-3.jpg" alt=""></figure>
+                                <div class="author-info">
+                                    <span class="icon fa fa-quote-left"></span>
+                                    <div class="author-name">Lara Croft</div>
+                                    <div class="designation">Restaurant Owner</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -683,26 +762,26 @@
                                             <p>Shlok Hospital A Multispeciality Hospital At Velu. One of the best hospital in Velu with well equiped Operation Theatre and Trained Nursing Staff.</p>
                                         </div>
                                         <ul class="social-icon-three">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        </ul>
+                                            <ul class="social-icon-three">
+                                                <li><a href="https://www.facebook.com/people/Shlok-hospital/100064047314336/"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://twitter.com/shlok_Hospital"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://www.instagram.com/shlokhospital/"><i class="fab fa-square-instagram"></i></a></li>
+                                                <li><a href="https://api.whatsapp.com/send?text=https://www.shlokhospital.in"><span class="fa-brands fa-square-whatsapp" id="whatsapp-icon"></span></a></li>
+                                            </ul>
                                     </div>
                                 </div>
 
                                 <!--Footer Column-->
                                 <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
                                     <div class="footer-widget">
-                                        <h2 class="widget-title">Departments</h2>
+                                        <h2 class="widget-title">Services</h2>
                                         <ul class="user-links">
-                                            <li><a href="#">Burn Care</a></li>
-                                            <li><a href="#">Physiotherapy</a></li>
-                                            <li><a href="#">Anaesthesiology</a></li>
-                                            <li><a href="#">Psychiatry</a></li>
-                                            <li><a href="#">Rheumatology</a></li>
-                                            <li><a href="#">More</a></li>
+                                            <li><a href="burncare.html">Burn Care</a></li>
+                                            <li><a href="physiotheraphy.html">Physiotherapy</a></li>
+                                            <li><a href="anaesthesiology.html">Anaesthesiology</a></li>
+                                            <li><a href="psychiatry.html">Psychiatry</a></li>
+                                            <li><a href="rheumatology.html">Rheumatology</a></li>
+                                            <li><a href="more.html">More</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -745,25 +824,28 @@
                                 <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <!--Footer Column-->
                                     <div class="footer-widget contact-widget">
+                                        <div class="md:ml-8">
                                         <h2 class="widget-title">Contact Us</h2>
+                                        </div>
                                         <!--Footer Column-->
                                         <div class="widget-content">
                                             <ul class="contact-list">
-                                                <li>
-                                                    <span class="icon flaticon-placeholder"></span>
-                                                    <div class="text">Right Side Of Bridge, Khed Shivapur,Khed Shivapur, Kondhanpur Phata, Opposite Muktangan Hotel
-                                                </li>
-
-                                                <li>
+                                            
+                                            
+                                                <div class="flex">
+                                                <li class="md:ml-9 -ml-11 -mt-3">
                                                     <span class="icon flaticon-call-1"></span>
+                                                    <div class="-ml-6">
                                                     <div class="text">Mon to sun : 7PM - 7PM</div>
                                                     <a href="tel:+08048051713"><strong>+91-08048051713</strong></a>
+                                                    </div>
                                                 </li>
 
-                                                <li>
-                                                    <span class="icon flaticon-email"></span>
-                                                    <div class="text">Do you have a Question?<br>
-                                                        <a href="shlokhospital.ks@gmail.com"><strong>shlokhospital.ks@gmail.com</strong></a></div>
+                                                </div>
+
+                                                <li class="md:-ml-10 -ml-16 md:mt-12 mt-3">
+                                                    <iframe width="100%" height="20%" src="https://www.google.com/maps/embed/v1/place?q=412205,Right Side Of Bridge, Khed Shivapur, Khed Shivapur , Kondhanpur Phata, Opposite Muktangan Hotel,Pune,India&amp;zoom=15&amp;key=AIzaSyDz5vOp_4ebrlGOV0FyuSf_w5jHBIQz5iQ">
+                                                </iframe>
                                                 </li>
 
                                             </ul>
@@ -776,101 +858,12 @@
                 </div>
             </div>
 
-            <!--Footer Bottom-->
-            <div class="footer-bottom">
-                <!-- Scroll To Top -->
-                <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-                <div class="auto-container">
-                    <div class="inner-container clearfix">
-                        <div class="footer-nav">
-                            <ul class="clearfix">
-                                <li><a href="index.html">Privacy Policy</a></li>
-                                <li><a href="about-us.html">Contact</a></li>
-                                <li><a href="services.html">Supplier</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="copyright-text">
-                            <p>Copyright © 2020 <a href="#">Bold Touch</a>All Rights Reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--End Main Footer -->
+           
 
     </div>
     <!-- End Page Wrapper -->
 
-    <!-- Color Palate / Color Switcher -->
-    <div class="color-palate">
-        <div class="inner-palate">
-            <!-- <div class="color-trigger"><i class="fa fa-cog"></i></div> -->
-            <div class="color-palate-head">
-                <h5>GET AN AWESOME START!</h5>
-            </div>
-            <div class="demos-box">
-                <h6>Choose your demo</h6>
-                <ul class="single-item-carousel owl-carousel owl-theme demos-list">
-                    <li data-text="Home Medical"><a href="index.html"><img src="images/background/demos/1.png" alt=""></a></li>
-                    <li data-text="Home Clanic"><a href="index-2.html"><img src="images/background/demos/2.png" alt=""></a></li>
-                    <li data-text="Home Dental Care"><a href="index-3.html"><img src="images/background/demos/3.png" alt=""></a></li>
-                    <li data-text="Home Eye Care"><a href="index-4.html"><img src="images/background/demos/4.png" alt=""></a></li>
-                    <li data-text="Home Prenatal care"><a href="index-5.html"><img src="images/background/demos/5.png" alt=""></a></li>
-                </ul>
-            </div>
-            <div class="various-color clearfix">
-                <div class="colors-list">
-                    <h6>Choose Your Color</h6>
-                    <span class="palate default-color active" data-theme-file="css/color-themes/default-theme.css"></span>
-                    <span class="palate tealblue-color" data-theme-file="css/color-themes/tealblue.css"></span>
-                    <span class="palate scarlet-color" data-theme-file="css/color-themes/scarlet.css"></span>
-                    <span class="palate kellygreen-color" data-theme-file="css/color-themes/kellygreen.css"></span>
-                    <span class="palate dodgerblue-color" data-theme-file="css/color-themes/dodgerblue.css"></span>
-                    <span class="palate red-color" data-theme-file="css/color-themes/red.css"></span>
-                    <span class="palate selectiveyellow-color" data-theme-file="css/color-themes/selectiveyellow.css"></span>
-                    <span class="palate maroon-color" data-theme-file="css/color-themes/maroon.css"></span>
-                    <span class="palate brown-color" data-theme-file="css/color-themes/brown.css"></span>
-                    <span class="palate green-color" data-theme-file="css/color-themes/green.css"></span>
-                    <span class="palate duchessblue-color" data-theme-file="css/color-themes/duchessblue.css"></span>
-                    <span class="palate lightblue-color" data-theme-file="css/color-themes/lightblue.css"></span>
-                    <span class="palate frenchgray-color" data-theme-file="css/color-themes/frenchgray.css"></span>
-                    <span class="palate telemagenta-color" data-theme-file="css/color-themes/telemagenta.css"></span>
-                    <span class="palate signalviolet-color" data-theme-file="css/color-themes/signalviolet.css"></span>
-                </div>
-            </div>
-            <div class="lower-options">
-                <h6>RTL Supported</h6>
-                <ul class="rtl-version option-box">
-                    <li class="active">LTR</li>
-                    <li class="rtl">RTL</li>
-                </ul>
-                <h6>Box &amp; Wide layout</h6>
-                <ul class="box-version option-box">
-                    <li class="active">Wide</li>
-                    <li class="box">Boxed</li>
-                </ul>
-                <div class="box-mode-bg">
-                    <h6>Boxed Mode Backgrounds</h6>
-                    <ul class="clearfix">
-                        <li class="active" style="background-image: url(images/background/boxed-bg/1.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/2.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/3.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/4.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/5.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/6.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/7.png);"></li>
-                        <li style="background-image: url(images/background/boxed-bg/8.png);"></li>
-                    </ul>
-                </div>
-                <div class="palate-foo">
-                    <span>You will find much more options for colors and styling in admin panel. This color picker is used only for demonstation purposes.</span>
-                </div>
-                <a href="https://themeforest.net/item/medicoz-clinic-hospital-html-template/28397578?ref=bold_touch" class="purchase-btn">Purchase now $12</a>
-            </div>
-        </div>
-    </div>
+    
     <!-- End Color Switcher -->
 
     <script src="js/jquery.js"></script>

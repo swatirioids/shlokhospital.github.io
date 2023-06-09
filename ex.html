@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Icon Dialog Box</title>
+  <style>
+    .phone-icon {
+      cursor: pointer;
+    }
+    .dialog-box {
+      display: none;
+      /* Styles for the dialog box */
+    }
+  </style>
+</head>
+<body>
+  <!-- Phone Icon -->
+  <span class="phone-icon">&#128222;</span>
+
+  <!-- Dialog Box -->
+  <div class="dialog-box">
+    <!-- Content of the dialog box -->
+    <p>This is the dialog box.</p>
+  </div>
+
+  <script>
+    // Add event listener to the phone icon
+    const phoneIcon = document.querySelector('.phone-icon');
+    const dialogBox = document.querySelector('.dialog-box');
+
+    phoneIcon.addEventListener('click', function() {
+      dialogBox.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
