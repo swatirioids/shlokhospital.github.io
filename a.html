@@ -7,78 +7,115 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="fixed bottom-0 right-0 m-4">
-    <div id="popupBar" class="flex items-center justify-center bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer">
-      Open Form
-    </div>
-  </div>
+  <style>
+    .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:30;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  filter: blur(5px); /* blur effect */
+  z-index: 9999;
+  display: none;
   
-  <div id="popupOverlay" class="fixed top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-50 hidden">
-    <div class="flex items-center justify-center h-full">
-      <div class="max-w-md mx-auto bg-white p-5 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-5">Validation Form</h2>
-        <form id="validationForm">
-          <div class="mb-4">
-            <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>
-            <input type="text" id="name" name="name" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500" required>
-          </div>
-          <div class="mb-4">
-            <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
-            <input type="email" id="email" name="email" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500" required>
-          </div>
-          <div class="mb-4">
-            <label for="contact" class="block text-gray-700 font-bold mb-2">Contact:</label>
-            <input type="tel" id="contact" name="contact" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-blue-500" required>
-          </div>
-          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-       
-  
-  <script>
-    const popupBar = document.getElementById('popupBar');
-const popupOverlay = document.getElementById('popupOverlay');
-const validationForm = document.getElementById('validationForm');
-
-popupBar.addEventListener('click', openPopup);
-validationForm.addEventListener('submit', handleSubmit);
-
-function openPopup() {
-  popupOverlay.classList.remove('hidden');
 }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const contactInput = document.getElementById('contact');
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  overflow: hidden;
+  /* border-radius: 5px; */
+  z-index: 10000;
+  display: none;
+}
 
-  const nameValue = nameInput.value.trim();
-  const emailValue = emailInput.value.trim();
-  const contactValue = contactInput.value.trim();
+.popup-content {
+width:"1px"
+}
 
-  if (!nameValue || !emailValue || !contactValue) {
-    alert('Please fill in all fields.');
-    return;
+.pop{
+    margin-left: 50rem;
+    top:0;
+}
+</style>
+<div class="flex items-center gap-6 w-full">
+  <div>
+      <div id="popups" class="popup md:w-3/5">
+          <div class="popup-content">
+              <div class=" gap-3">
+              
+                  <div class=" px-10 py-10">
+                      <div class="pop">
+                      <i id="close-popup-btns" class="fa-solid fa-x border-2 border-black p-1 rounded relative" id="myModal"
+                      ></i>
+                  </div>
+
+                          <div>
+                              <h1 class="text-4xl font-bold text-gray-600 relative -top-10 text-center">Book an Appointment</h1>
+                              <h1 class="text-base text-gray-400 -mt-5 text-center">Please Enter Your Contact Details</h1>
+                          </div>
+                      </div>
+                      
+                      <form action="" id="myForm">
+
+
+<input type="text" placeholder="Name" autocomplete="off" id="nameInput" name="name" class="border-b-2 border-0 border-gray-200 rounded-lg bg-gray-100 drop-shadow-xl h-10 px-4">
+<div id="nameError" class="text-red-500"></div>
+
+
+<button id="submitButton" type="button" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Submit</button>
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="overlays" class="overlay w-full "></div>
+
+
+
+<script>
+const nameInput = document.getElementById('nameInput');
+const nameError = document.getElementById('nameError');
+const submitButton = document.getElementById('submitButton');
+
+nameInput.addEventListener('input', () => {
+  validateName();
+});
+
+submitButton.addEventListener('click', () => {
+  if (validateName()) {
+    // Submit form or perform further actions
   }
+});
 
-  // Additional validation logic can be added here
-  
-  // Submit the form if all validations pass
-  alert('Form submitted successfully!');
-  closePopup();
-  validationForm.reset();
+function validateName() {
+  const name = nameInput.value.trim();
+  if (name === '') {
+    nameError.textContent = 'Name is required';
+    nameInput.classList.add('border-red-500');
+    return false;
+  } else {
+    nameError.textContent = '';
+    nameInput.classList.remove('border-red-500');
+    return true;
+  }
 }
 
-function closePopup() {
-  popupOverlay.classList.add('hidden');
-}
-
-  </script>
+</script>
 </body>
 </html>
